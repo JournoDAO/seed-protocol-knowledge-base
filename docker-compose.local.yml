@@ -1,0 +1,10 @@
+services:
+  quartz:
+    container_name: quartz
+    build:
+        context: .
+        dockerfile: Dockerfile
+    volumes:
+      - ./content:/app/content
+    ports:
+        - "8080:8080"

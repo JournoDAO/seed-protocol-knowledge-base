@@ -3,6 +3,8 @@
 # Exit script if any command fails
 set -e
 
+echo "Syncing files from $SOURCE_DIR to $TARGET_DIR..."
+
 # Load environment variables from .env file
 if [ -f .env ]; then
   export $(cat .env | grep -v '#' | awk '/=/ {print $1}')
