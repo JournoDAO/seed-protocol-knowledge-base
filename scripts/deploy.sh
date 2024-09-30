@@ -13,8 +13,4 @@ if [ -d "$TARGET_DIR" ]; then
   rm -rf "$TARGET_DIR"
 fi
 
-cp -r $SOURCE_DIR $TARGET_DIR
-
-chokidar "$SOURCE_DIR**/*" -c "rsync -av --delete $SOURCE_DIR $TARGET_DIR"
-
-echo "Files synced successfully from $SOURCE_DIR to $TARGET_DIR."
+git clone https://$GITHUB_PERSONAL_ACCESS_TOKEN@github.com/$REPO_OWNER/$REPO_NAME.git $TARGET_DIR

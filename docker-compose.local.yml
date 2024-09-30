@@ -8,3 +8,4 @@ services:
       - ./content:/app/content
     ports:
         - "8080:8080"
+
