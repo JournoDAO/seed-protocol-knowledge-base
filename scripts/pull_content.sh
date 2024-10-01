@@ -14,3 +14,5 @@ if [ -d "$TARGET_DIR" ]; then
 fi
 
 git clone https://$GITHUB_PERSONAL_ACCESS_TOKEN@github.com/$REPO_OWNER/$REPO_NAME.git $TARGET_DIR
+
+./scripts/deploy_knowledge_base.sh
