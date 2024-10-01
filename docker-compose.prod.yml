@@ -8,17 +8,3 @@ services:
       - ./content:/app/content
     ports:
         - "8080:8080"
-
-  webhook:
-    image: almir/webhook
-    container_name: webhook-listener
-    volumes:
-      - ./hooks.json:/etc/webhook/hooks.json
-      - ./scripts:/scripts
-    ports:
-      - "9000:9000"
-    environment:
-      - WEBHOOK_VERBOSE=true
-      - GITHUB_WEBHOOK_SECRET=${GITHUB_WEBHOOK_SECRET}
-
-

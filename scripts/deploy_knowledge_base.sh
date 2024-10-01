@@ -12,6 +12,7 @@ echo "Pulling the latest content from the remote repository..."
 
 git pull
 
-npx quartz build --serve
+docker compose -f docker-compose.prod.yml build
+docker compose -f docker-compose.prod.yml up -d
 
 echo "Content pulled successfully from the remote repository."
