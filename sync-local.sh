@@ -15,6 +15,6 @@ fi
 
 cp -r $SOURCE_DIR $TARGET_DIR
 
-chokidar "$SOURCE_DIR**/*" -c "rsync -av --delete $SOURCE_DIR $TARGET_DIR"
+chokidar "$SOURCE_DIR**/*" -c "rsync -av --delete --exclude '.idea' --exclude '.git' --exclude '.DS_Store' --exclude '.gitignore' --exclude '.github' $SOURCE_DIR $TARGET_DIR && npx quartz build"
 
 echo "Files synced successfully from $SOURCE_DIR to $TARGET_DIR."
