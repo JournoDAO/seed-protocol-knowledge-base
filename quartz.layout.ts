@@ -1,5 +1,6 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import matter from 'gray-matter'
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -27,7 +28,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      mapFn: (item) => {
+        if (item.file && item.file.text) {
+          console.log('[quartz.layout] [defaultContentPageLayout] [Explorer] matter', matter(item.file?.text))
+        }
+        item.displayName = item.displayName
+      }
+    })),
   ],
   right: [
     Component.Graph(),
