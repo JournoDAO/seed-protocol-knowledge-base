@@ -1,6 +1,6 @@
 ---
 title: Seed Protocol Knowledge Base
-version: 0.1.1
+version: 0.1.2
 ---
 
 # Seed Protocol Knowledge Base
